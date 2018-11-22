@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Life
+  - Enemy
+  - Coin
+  - BigCoin
+  - BackgroundMusic
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Ground
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 927745819
+    locked: 0
+  - name: Midground
+    uniqueID: 2507585315
+    locked: 0
+  - name: Foreground
+    uniqueID: 913218929
+    locked: 0
+  - name: ForegroundPlus
+    uniqueID: 2483424823
+    locked: 0
