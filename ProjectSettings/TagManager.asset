@@ -9,6 +9,7 @@ TagManager:
   - Coin
   - BigCoin
   - BackgroundMusic
+  - LeftWall
   layers:
   - Default
   - TransparentFX
