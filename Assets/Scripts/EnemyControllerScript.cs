@@ -71,7 +71,7 @@ public class EnemyControllerScript : MonoBehaviour {
 
   void OnTriggerEnter2D(Collider2D other)
   {
-    if (other.tag == "Obstacle")
+    if (other.tag == "Obstacle" || other.tag == "Enemy")
     {
       enemyState = EnemyStates.moveStop;
       new WaitForSeconds(0.4f);
