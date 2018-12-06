@@ -58,7 +58,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.6377847, y: -7.3328285}
+  m_Offset: {x: -1.6377847, y: -6.97336}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -69,7 +69,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.361089, y: 1.9131851}
+  m_Size: {x: 7.361089, y: 2.632122}
   m_EdgeRadius: 0
 --- !u!61 &61377038701483708
 BoxCollider2D:
@@ -83,7 +83,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.9726424, y: -1.8450353}
+  m_Offset: {x: 2.6560254, y: -1.3701019}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -94,7 +94,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7048311, y: 18.09993}
+  m_Size: {x: 2.3380651, y: 19.049797}
   m_EdgeRadius: 0
 --- !u!61 &61469965536401530
 BoxCollider2D:
@@ -108,7 +108,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -6.252331, y: -3.2800558}
+  m_Offset: {x: -6.014861, y: -3.280056}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -119,7 +119,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7053394, y: 15.229889}
+  m_Size: {x: 2.1802793, y: 15.229889}
   m_EdgeRadius: 0
 --- !u!61 &61897844311342158
 BoxCollider2D:
@@ -133,7 +133,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.6880004, y: -7.27763}
+  m_Offset: {x: -1.6880004, y: -4.681467}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -144,7 +144,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.4095416, y: 1.9046326}
+  m_Size: {x: 7.4095416, y: 7.096958}
   m_EdgeRadius: 0
 --- !u!95 &95050176419721916
 Animator:

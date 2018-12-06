@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class RocketController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+  Animator animator;
+
+  // Use this for initialization
+  void Start () {
+    animator = GetComponent<Animator>();		
 	}
 	
 	// Update is called once per frame
@@ -16,18 +18,9 @@ public class RocketController : MonoBehaviour {
 
   void OnTriggerEnter2D(Collider2D other)
   {
-    /*if (other.tag == "Obstacle")
+    if (other.tag == "Player")
     {
-      enemyState = EnemyStates.moveStop;
-      new WaitForSeconds(0.4f);
-      if (isRight)
-      {
-        enemyState = EnemyStates.moveLeft;
-      }
-      else
-      {
-        enemyState = EnemyStates.moveRight;
-      }
-    }*/
+      animator.SetBool("Close", true);
+    }
   }
 }
