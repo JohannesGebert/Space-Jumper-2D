@@ -1093,7 +1093,7 @@ MonoBehaviour:
   XMaxEnabled: 1
   XMaxValue: 277.3822
   XMinEnabled: 1
-  XMinValue: -7.599366
+  XMinValue: -5.33
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1237,6 +1237,16 @@ Prefab:
     - target: {fileID: 1403584642925952, guid: f365727cfeddf2248ae0c1252b979bfc, type: 2}
       propertyPath: m_Name
       value: Moving Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 114293099830861998, guid: f365727cfeddf2248ae0c1252b979bfc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212294529550974140, guid: f365727cfeddf2248ae0c1252b979bfc,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f365727cfeddf2248ae0c1252b979bfc, type: 2}

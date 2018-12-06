@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NinjaControllerScript : MonoBehaviour {
 
@@ -104,6 +105,14 @@ public class NinjaControllerScript : MonoBehaviour {
 
       scoreText.text = CoinCounter.ToString();
       Debug.Log("Score: " + CoinCounter);
+    }
+  }
+
+  void OnCollisionEnter2D(Collision2D other)
+  {
+    if (other.gameObject.tag == "Enemy")
+    {
+      SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
   }
 }
