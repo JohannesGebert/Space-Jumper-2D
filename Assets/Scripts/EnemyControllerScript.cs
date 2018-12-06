@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyControllerScript : MonoBehaviour {
 
@@ -9,19 +10,16 @@ public class EnemyControllerScript : MonoBehaviour {
 
   EnemyStates enemyState = EnemyStates.moveLeft;
 
-  float returnHomeRange = 4.0f;
   Transform homePosition;
-  float deathForce = 3.0f;
+  //float deathForce = 3.0f;
 
   EnemyStates currentState;
   Vector3 velocity = Vector3.zero;
-
-  float gravity = 20;
   
   bool isRight = false;
 
   Vector3 myTransform;
-  float resetMoveSpeed = 0.0f;
+  //float resetMoveSpeed = 0.0f;
 
   SpriteRenderer spriteRenderer;
   Animator animator;
@@ -71,9 +69,21 @@ public class EnemyControllerScript : MonoBehaviour {
     GetComponent<Rigidbody2D>().velocity = velocity;
   }
 
-  private void OnTriggerEnter(Collider other)
+  void OnTriggerEnter2D(Collider2D other)
   {
-
+    if (other.tag == "Obstacle")
+    {
+      enemyState = EnemyStates.moveStop;
+      new WaitForSeconds(0.4f);
+      if (isRight)
+      {
+        enemyState = EnemyStates.moveLeft;
+      }
+      else
+      {
+        enemyState = EnemyStates.moveRight;
+      }
+    }
   }
 
   void PatrolRight()

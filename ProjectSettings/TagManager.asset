@@ -10,6 +10,8 @@ TagManager:
   - BigCoin
   - BackgroundMusic
   - LeftWall
+  - Wall
+  - Obstacle
   layers:
   - Default
   - TransparentFX
