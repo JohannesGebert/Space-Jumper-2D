@@ -211,6 +211,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1520923621187856, guid: fc78ebb1bc4d77d42a3bd2f637ea5c31, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 212226197097043516, guid: fc78ebb1bc4d77d42a3bd2f637ea5c31,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 913218929
+      objectReference: {fileID: 0}
+    - target: {fileID: 212226197097043516, guid: fc78ebb1bc4d77d42a3bd2f637ea5c31,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 60276689638391278, guid: fc78ebb1bc4d77d42a3bd2f637ea5c31,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc78ebb1bc4d77d42a3bd2f637ea5c31, type: 2}
   m_IsPrefabAsset: 0
@@ -1091,7 +1110,7 @@ MonoBehaviour:
   YMinEnabled: 1
   YMinValue: 0
   XMaxEnabled: 1
-  XMaxValue: 277.3822
+  XMaxValue: 273.3822
   XMinEnabled: 1
   XMinValue: -5.33
 --- !u!20 &519420031
