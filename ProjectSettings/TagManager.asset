@@ -12,6 +12,7 @@ TagManager:
   - LeftWall
   - Wall
   - Obstacle
+  - Rocket
   layers:
   - Default
   - TransparentFX
