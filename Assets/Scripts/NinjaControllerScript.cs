@@ -108,11 +108,11 @@ public class NinjaControllerScript : MonoBehaviour {
     }
   }
 
-  void OnCollisionEnter2D(Collision2D other)
+  /*void OnCollisionEnter2D(Collision2D other)
   {
     if (other.gameObject.tag == "Enemy")
     {
       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-  }
+  }*/
 }
