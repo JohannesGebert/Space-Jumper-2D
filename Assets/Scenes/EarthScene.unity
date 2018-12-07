@@ -5016,6 +5016,16 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 212822662958423324, guid: 4d2630151884b01448000dc8fc983855,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 913218929
+      objectReference: {fileID: 0}
+    - target: {fileID: 212822662958423324, guid: 4d2630151884b01448000dc8fc983855,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d2630151884b01448000dc8fc983855, type: 2}
   m_IsPrefabAsset: 0

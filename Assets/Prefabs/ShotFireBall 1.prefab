@@ -21,8 +21,9 @@ GameObject:
   - component: {fileID: 4105625242762598}
   - component: {fileID: 212221032587417052}
   - component: {fileID: 50410034071083038}
-  - component: {fileID: 58362094450087226}
   - component: {fileID: 114411558819312752}
+  - component: {fileID: 60461967347170050}
+  - component: {fileID: 68053367787605884}
   m_Layer: 0
   m_Name: ShotFireBall 1
   m_TagString: Untagged
@@ -63,8 +64,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &58362094450087226
-CircleCollider2D:
+--- !u!60 &60461967347170050
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -76,8 +77,69 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 2, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.545
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.18, y: 0.96}
+    newSize: {x: 1.09, y: 0.48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.09, y: 0.13}
+      - {x: 1.0799999, y: 0.19999999}
+      - {x: 1.04, y: 0.25}
+      - {x: 0.89, y: 0.38}
+      - {x: 0.71999997, y: 0.41}
+      - {x: 0.28, y: 0.41}
+      - {x: -0.01, y: 0.37}
+      - {x: -0.07, y: 0.41}
+      - {x: -0.39999998, y: 0.41}
+      - {x: -0.44, y: 0.37}
+      - {x: -0.44, y: 0.32999998}
+      - {x: -0.41, y: 0.29999998}
+      - {x: -0.37, y: 0.28}
+      - {x: -0.42999998, y: 0.22999999}
+      - {x: -0.63, y: 0.22999999}
+      - {x: -0.83, y: 0.16}
+      - {x: -1.09, y: 0.14}
+      - {x: -1.09, y: 0.06}
+      - {x: -1.0799999, y: 0.04}
+      - {x: -0.91999996, y: 0.01}
+      - {x: -0.63, y: 0}
+      - {x: -0.51, y: -0.06}
+      - {x: -0.77, y: -0.04}
+      - {x: -0.83, y: -0.16}
+      - {x: -0.62, y: -0.21}
+      - {x: -0.39, y: -0.19999999}
+      - {x: -0.35, y: -0.29}
+      - {x: -0.32999998, y: -0.39}
+      - {x: -0.01, y: -0.41}
+      - {x: 0.11, y: -0.41}
+      - {x: 0.38, y: -0.48}
+      - {x: 0.71, y: -0.48}
+      - {x: 0.94, y: -0.39}
+      - {x: 1.06, y: -0.26999998}
+      - {x: 1.09, y: -0.17999999}
+--- !u!68 &68053367787605884
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1121852422061066}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.09, y: 0}
+  - {x: 1.09, y: 0}
 --- !u!114 &114411558819312752
 MonoBehaviour:
   m_ObjectHideFlags: 1
