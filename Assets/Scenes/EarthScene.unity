@@ -906,6 +906,27 @@ Prefab:
       propertyPath: m_UsedByComposite
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 60942550570567510, guid: 6d9cbf0c588a06a45b805e207a1d799c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95173335624227762, guid: 6d9cbf0c588a06a45b805e207a1d799c,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95173335624227762, guid: 6d9cbf0c588a06a45b805e207a1d799c,
+        type: 2}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212182961392246190, guid: 6d9cbf0c588a06a45b805e207a1d799c,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4436e8c459c32e04d8dc48d6a71b641a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d9cbf0c588a06a45b805e207a1d799c, type: 2}
   m_IsPrefabAsset: 0

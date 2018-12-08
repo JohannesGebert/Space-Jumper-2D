@@ -64,11 +64,7 @@ public class NinjaControllerScript : MonoBehaviour {
   {
     FacingRight = !FacingRight;
 
-        //Vector3 theScale = transform.localScale;
-        //theScale.x *= -1;
-        //transform.localScale = theScale;
-
-        transform.Rotate(0f, 180f, 0f);
+    transform.Rotate(0f, 180f, 0f);
   }
 
   void OnTriggerEnter2D(Collider2D other)
