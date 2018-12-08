@@ -10,6 +10,7 @@ public class EnemyControllerScript : MonoBehaviour {
   public float AttackMoveSpeed = 20.0f;
   public bool Invincible = false;
   public float attackRange = 1.0f;
+  public int health = 100;
 
   public bool CanChaseTarget = false;
 
@@ -37,6 +38,7 @@ public class EnemyControllerScript : MonoBehaviour {
   Animator animator;
 
   Rigidbody2D rigidBody;
+  public GameObject deathEffect;
 
   // Use this for initialization
   void Start () {
@@ -278,6 +280,32 @@ public class EnemyControllerScript : MonoBehaviour {
     {
       Gizmos.color = Color.green;
       Gizmos.DrawWireSphere(PatrolPosition.position, homeRange);
+    }
+  }
+
+  public void TakeDamage(int damage)
+  {
+    health -= damage;
+    if (health <= 0)
+    {
+      Die();
+    }
+  }
+
+  void Die()
+  {
+    //Instantiate(deathEffect, transform.position, Quaternion.identity);
+    //Destroy(gameObject);
+    velocity.x = 0;
+    MoveSpeed = 0f;
+    animator.SetBool("Dead", true);
+    Patrol = false;
+    CanChaseTarget = false;
+    enemyState = EnemyStates.die;
+    if (gameObject.tag == "Enemy")
+    {
+      Destroy(gameObject.GetComponent<Collider2D>());
+      Destroy(gameObject.GetComponentInChildren<Collider2D>());
     }
   }
 }

@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 114949820432826560}
   - component: {fileID: 50883275012491882}
   - component: {fileID: 60950014749592662}
-  - component: {fileID: 114795533045640076}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -97,8 +96,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1742639470296296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -267.37, y: -1.5, z: 0.01953125}
-  m_LocalScale: {x: 0.99, y: 1, z: 1}
+  m_LocalPosition: {x: -262.29, y: -1.5, z: 0.01953125}
+  m_LocalScale: {x: 0.98999995, y: 1, z: 1}
   m_Children:
   - {fileID: 4272663318703564}
   - {fileID: 4823745267642828}
@@ -337,19 +336,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114795533045640076
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1742639470296296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75981d3f4f2ee87499f9d0fe8b0c9d9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  deathEffect: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 2}
 --- !u!114 &114949820432826560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -365,6 +351,7 @@ MonoBehaviour:
   AttackMoveSpeed: 200
   Invincible: 0
   attackRange: 5.33
+  health: 100
   CanChaseTarget: 1
   DieOnJump: 1
   ChaseTarget: {fileID: 0}
@@ -372,6 +359,7 @@ MonoBehaviour:
   homeRange: 10.35
   Patrol: 0
   PatrolPosition: {fileID: 0}
+  deathEffect: {fileID: 0}
 --- !u!212 &212822662958423324
 SpriteRenderer:
   m_ObjectHideFlags: 1
