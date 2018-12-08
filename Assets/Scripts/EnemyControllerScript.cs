@@ -13,6 +13,9 @@ public class EnemyControllerScript : MonoBehaviour {
 
   public bool CanChaseTarget = false;
 
+  public bool DieOnJump = false;
+  float bounceRange = 10.0f;
+
   EnemyStates enemyState = EnemyStates.moveLeft;
 
   public Transform ChaseTarget;
@@ -33,44 +36,28 @@ public class EnemyControllerScript : MonoBehaviour {
   SpriteRenderer spriteRenderer;
   Animator animator;
 
+  Rigidbody2D rigidBody;
+
 	// Use this for initialization
 	void Start () {
     
     spriteRenderer = GetComponent<SpriteRenderer>();
     animator = GetComponent<Animator>();
     resetMoveSpeed = MoveSpeed;
+    rigidBody = GetComponent<Rigidbody2D>();
   }
 
 
   // Update is called once per frame
   void Update () {
 
-    distanceToTarget = Vector3.Distance(ChaseTarget.position, transform.position);
-    if (distanceToTarget <= searchRange)
+    if (enemyState != EnemyStates.die)
     {
-      if (CanChaseTarget)
-      {
-        ChasePlayer();
-      }
+      CheckIfChaseIsOn();
+      CheckIfPatrolIsOn();
       
-      if (distanceToTarget <= attackRange)
-      {
-        MoveSpeed = AttackMoveSpeed;
-      } else
-      {
-        MoveSpeed = resetMoveSpeed;
-      }
-    } else
-    {
-      if (Patrol)
-      {
-        distanceToHome = Vector3.Distance(PatrolPosition.position, transform.position);
-        if(distanceToHome > homeRange)
-        {
-          GoHome();
-        }
-      }
     }
+    
 
     switch(enemyState)
     {
@@ -117,7 +104,7 @@ public class EnemyControllerScript : MonoBehaviour {
 
   void OnTriggerEnter2D(Collider2D other)
   {
-    if (other.tag == "Obstacle" || other.tag == "Enemy")
+    if (other.tag == "Obstacle")
     {
       enemyState = EnemyStates.moveStop;
       new WaitForSeconds(0.4f);
@@ -128,6 +115,77 @@ public class EnemyControllerScript : MonoBehaviour {
       else
       {
         enemyState = EnemyStates.moveRight;
+      }
+    }
+
+    if (other.gameObject.name == "Feet")
+    {
+      Debug.Log("Hit Player Feeet ");
+      GameObject playerLink = GameObject.FindGameObjectWithTag("Player");
+      Rigidbody2D playerRigidBody = playerLink.GetComponent<Rigidbody2D>();
+      playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, bounceRange);
+      Debug.Log("Hit Player Feeet ");
+      if (DieOnJump)
+      {
+        Debug.Log("die on jump");
+        if (rigidBody)
+        {
+          Debug.Log("setDie ");
+          enemyState = EnemyStates.die;
+        }
+      }
+    }
+  }
+
+  private void OnCollisionEnter2D(Collision2D collision)
+  {
+    if (collision.gameObject.tag == "Enemy")
+    {
+      Debug.Log("Hit Enemy: ");
+      {
+        Debug.Log("Hit Enemy: Sleep ");
+        Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+      }
+    }
+    if (enemyState == EnemyStates.die && collision.gameObject.tag == "Player")
+    {
+      Debug.Log("Hit Player: ");
+      {
+        Debug.Log("Hit Player: ignore ");
+        Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+      }
+    }
+  }
+
+  void CheckIfPatrolIsOn()
+  {
+    if (Patrol)
+    {
+      distanceToHome = Vector3.Distance(PatrolPosition.position, transform.position);
+      if (distanceToHome > homeRange)
+      {
+        GoHome();
+      }
+    }
+  }
+  void CheckIfChaseIsOn()
+  {
+
+    distanceToTarget = Vector3.Distance(ChaseTarget.position, transform.position);
+    if (distanceToTarget <= searchRange)
+    {
+      if (CanChaseTarget)
+      {
+        ChasePlayer();
+      }
+
+      if (distanceToTarget <= attackRange)
+      {
+        MoveSpeed = AttackMoveSpeed;
+      }
+      else
+      {
+        MoveSpeed = resetMoveSpeed;
       }
     }
   }
@@ -163,19 +221,13 @@ public class EnemyControllerScript : MonoBehaviour {
   void DieRight()
   {
     velocity.x = 0;
-    new WaitForSeconds(0.1f);
     animator.SetBool("Dead", true);
-    new WaitForSeconds(0.4f);
-    //destroy gameobject
   }
 
   void DieLeft()
   {
     velocity.x = 0;
-    new WaitForSeconds(0.1f);
     animator.SetBool("Dead", true);
-    new WaitForSeconds(0.4f);
-    //destroy gameobject
   }
 
   void GoHome()
