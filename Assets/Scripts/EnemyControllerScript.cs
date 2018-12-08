@@ -38,8 +38,8 @@ public class EnemyControllerScript : MonoBehaviour {
 
   Rigidbody2D rigidBody;
 
-	// Use this for initialization
-	void Start () {
+  // Use this for initialization
+  void Start () {
     
     spriteRenderer = GetComponent<SpriteRenderer>();
     animator = GetComponent<Animator>();
@@ -222,12 +222,22 @@ public class EnemyControllerScript : MonoBehaviour {
   {
     velocity.x = 0;
     animator.SetBool("Dead", true);
+    if (gameObject.tag == "Enemy")
+    {
+      Destroy(gameObject.GetComponent<Collider2D>());
+      Destroy(gameObject.GetComponentInChildren<Collider2D>());
+    }
   }
 
   void DieLeft()
   {
     velocity.x = 0;
     animator.SetBool("Dead", true);
+    if (gameObject.tag == "Enemy")
+    {
+      Destroy(gameObject.GetComponent<Collider2D>());
+      Destroy(gameObject.GetComponentInChildren<Collider2D>());
+    }
   }
 
   void GoHome()
