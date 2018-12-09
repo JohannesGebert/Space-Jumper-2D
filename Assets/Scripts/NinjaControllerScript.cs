@@ -50,8 +50,6 @@ public class NinjaControllerScript : MonoBehaviour {
 
     Animator.SetFloat("Speed", Mathf.Abs(Move));
 
-
-    //Attention
     GetComponent<Rigidbody2D>().velocity = new Vector2(Move * MaxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
     if (Move > 0 && !FacingRight)
@@ -130,6 +128,11 @@ public class NinjaControllerScript : MonoBehaviour {
 
       scoreText.text = CoinCounter.ToString();
       Debug.Log("Score: " + CoinCounter);
+    }
+
+    if (other.gameObject.name == "BodyCollider")
+    {
+      GameController.health -= 1;
     }
   }
 
