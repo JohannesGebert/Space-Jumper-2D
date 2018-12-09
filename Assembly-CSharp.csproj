@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\ButtonFX.cs" />
      <Compile Include="Assets\Scripts\CameraFollowPlayer.cs" />
      <Compile Include="Assets\Scripts\EnemyControllerScript.cs" />
+     <Compile Include="Assets\Scripts\Jump.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\MoveWall.cs" />
      <Compile Include="Assets\Scripts\NinjaControllerScript.cs" />

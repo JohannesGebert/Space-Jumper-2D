@@ -891,6 +891,31 @@ Prefab:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 61820863}
+    - target: {fileID: 114684425210728852, guid: 6d9cbf0c588a06a45b805e207a1d799c,
+        type: 2}
+      propertyPath: JumpVelocity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 50403896528859402, guid: 6d9cbf0c588a06a45b805e207a1d799c,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 50403896528859402, guid: 6d9cbf0c588a06a45b805e207a1d799c,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114684425210728852, guid: 6d9cbf0c588a06a45b805e207a1d799c,
+        type: 2}
+      propertyPath: fallMultiplier
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114684425210728852, guid: 6d9cbf0c588a06a45b805e207a1d799c,
+        type: 2}
+      propertyPath: lowJumpMultiplier
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d9cbf0c588a06a45b805e207a1d799c, type: 2}
   m_IsPrefabAsset: 0
@@ -1231,6 +1256,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &632645151 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4636007612922860, guid: 6d9cbf0c588a06a45b805e207a1d799c,
+    type: 2}
+  m_PrefabInternal: {fileID: 356912422}
 --- !u!1001 &658441817
 Prefab:
   m_ObjectHideFlags: 0
@@ -3001,6 +3031,27 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 827c82e7f2934c047ac76ac3b84463e7, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1371105877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1108059564856592, guid: 6d9cbf0c588a06a45b805e207a1d799c,
+    type: 2}
+  m_PrefabInternal: {fileID: 356912422}
+--- !u!114 &1371105885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1371105877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609f3f95b331d17478bb66376d47c76d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpVelocity: 15
+  GroundCheck: {fileID: 632645151}
+  WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &1389667880
 GameObject:
   m_ObjectHideFlags: 0

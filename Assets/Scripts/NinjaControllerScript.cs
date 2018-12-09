@@ -9,36 +9,49 @@ public class NinjaControllerScript : MonoBehaviour {
   public float MaxSpeed = 10f;
   private bool FacingRight = true;
 
-  bool Grounded = false;
-  public Transform GroundCheck;
-  float GroundRadius = 0.2f;
-  public LayerMask WhatIsGround;
-  public float JumpForce = 700;
+  //bool Grounded = false;
+  //public Transform GroundCheck;
+  //float GroundRadius = 0.2f;
+  //public LayerMask WhatIsGround;
+  //public float JumpForce = 700;
+
+  //[Range(1, 40)]
+  //public float JumpVelocity;
+
+  public float fallMultiplier = 2.5f;
+  public float lowJumpMultiplier = 2f;
 
   private int CoinCounter;
   public Text scoreText;
 
   Animator Animator;
+  Rigidbody2D rb;
 
-	// Use this for initialization
-	void Start () {
+  // Use this for initialization
+  void Start()
+  {
     Animator = GetComponent<Animator>();
 
     CoinCounter = 0;
-	}
-	
+  }
+
+  void Awake()
+  {
+    rb = GetComponent<Rigidbody2D>();
+  }
+
 	// Update is called once per frame
 	void FixedUpdate ()
   {
-    Grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundRadius, WhatIsGround);
-    Animator.SetBool("Ground", Grounded);
-
-    //Animator.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
+    //Grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundRadius, WhatIsGround);
+    //Animator.SetBool("Ground", Grounded);
 
     float Move = Input.GetAxis("Horizontal");
 
     Animator.SetFloat("Speed", Mathf.Abs(Move));
 
+
+    //Attention
     GetComponent<Rigidbody2D>().velocity = new Vector2(Move * MaxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
     if (Move > 0 && !FacingRight)
@@ -49,16 +62,32 @@ public class NinjaControllerScript : MonoBehaviour {
     {
       flip();
     }
-  }
 
-  void Update()
-  {
-    if (Grounded && Input.GetKeyDown(KeyCode.Space))
+    if (rb.velocity.y < 0)
     {
-      Animator.SetBool("Ground", false);
-      GetComponent<Rigidbody2D>().AddForce(new Vector2(0, JumpForce));
+      rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
+    }
+    else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+    {
+      rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
     }
   }
+
+  //void Update()
+  //{
+  //  //if (Grounded && Input.GetKeyDown(KeyCode.Space))
+  //  //{
+  //  //  Animator.SetBool("Ground", false);
+  //  //  GetComponent<Rigidbody2D>().AddForce(new Vector2(0, JumpForce));
+  //  //}
+
+  //  //if (Grounded && Input.GetKeyDown(KeyCode.Space))
+  //  //{
+  //  //  GetComponent<Rigidbody2D>().velocity = Vector2.up * JumpVelocity;
+  //  //}
+  //}
+
+
 
   void flip()
   {
