@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.UI;
 
 public class EnemyControllerScript : MonoBehaviour {
@@ -18,6 +19,8 @@ public class EnemyControllerScript : MonoBehaviour {
   float bounceRange = 10.0f;
 
   EnemyStates enemyState = EnemyStates.moveLeft;
+  [StringInList("MoveLeft", "MoveRight")] public int StartMovement;
+
 
   public Transform ChaseTarget;
 
@@ -42,7 +45,7 @@ public class EnemyControllerScript : MonoBehaviour {
 
   // Use this for initialization
   void Start () {
-    
+    enemyState = (EnemyStates) StartMovement;
     spriteRenderer = GetComponent<SpriteRenderer>();
     animator = GetComponent<Animator>();
     resetMoveSpeed = MoveSpeed;
@@ -57,7 +60,6 @@ public class EnemyControllerScript : MonoBehaviour {
     {
       CheckIfChaseIsOn();
       CheckIfPatrolIsOn();
-      
     }
     
 
@@ -106,7 +108,27 @@ public class EnemyControllerScript : MonoBehaviour {
 
   void OnTriggerEnter2D(Collider2D other)
   {
-    if (other.tag == "Obstacle")
+    
+
+    if (other.gameObject.name == "Feet")
+    {
+      GameObject playerLink = GameObject.FindGameObjectWithTag("Player");
+      Rigidbody2D playerRigidBody = playerLink.GetComponent<Rigidbody2D>();
+      playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, bounceRange);
+
+      if (DieOnJump)
+      {
+        if (rigidBody)
+        {
+          enemyState = EnemyStates.die;
+        }
+      }
+    }
+  }
+
+  private void OnCollisionEnter2D(Collision2D collision)
+  {
+    if (collision.gameObject.tag == "Obstacle")
     {
       enemyState = EnemyStates.moveStop;
       new WaitForSeconds(0.4f);
@@ -120,42 +142,14 @@ public class EnemyControllerScript : MonoBehaviour {
       }
     }
 
-    if (other.gameObject.name == "Feet")
-    {
-      Debug.Log("Hit Player Feeet ");
-      GameObject playerLink = GameObject.FindGameObjectWithTag("Player");
-      Rigidbody2D playerRigidBody = playerLink.GetComponent<Rigidbody2D>();
-      playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, bounceRange);
-      Debug.Log("Hit Player Feeet ");
-      if (DieOnJump)
-      {
-        Debug.Log("die on jump");
-        if (rigidBody)
-        {
-          Debug.Log("setDie ");
-          enemyState = EnemyStates.die;
-        }
-      }
-    }
-  }
-
-  private void OnCollisionEnter2D(Collision2D collision)
-  {
     if (collision.gameObject.tag == "Enemy")
     {
-      Debug.Log("Hit Enemy: ");
-      {
-        Debug.Log("Hit Enemy: Sleep ");
-        Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
-      }
+      Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
     }
+
     if (enemyState == EnemyStates.die && collision.gameObject.tag == "Player")
     {
-      Debug.Log("Hit Player: ");
-      {
-        Debug.Log("Hit Player: ignore ");
-        Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
-      }
+      Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
     }
   }
 
