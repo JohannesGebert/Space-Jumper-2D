@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour {
         Life1.gameObject.SetActive(false);
         Life1.gameObject.SetActive(false);
         gameOver.gameObject.SetActive(true);
+        Time.timeScale = 0f;
         break;
     }
   }
