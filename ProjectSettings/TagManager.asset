@@ -14,6 +14,8 @@ TagManager:
   - Obstacle
   - Rocket
   - DeadlyObstacle
+  - Mute
+  - Unmute
   layers:
   - Default
   - TransparentFX

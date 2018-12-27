@@ -8,6 +8,9 @@ public class PauseMenu : MonoBehaviour {
   public static bool GameIsPaused = false;
 
   public GameObject PauseMenuUI;
+  
+
+  bool mute = false;
 	
 	// Update is called once per frame
 	void Update () {
@@ -30,7 +33,8 @@ public class PauseMenu : MonoBehaviour {
     Time.timeScale = 1f;
     GameIsPaused = false;
 
-    AudioListener.pause = false;
+    if(mute == false)
+      AudioListener.pause = false;
   }
 
   void Pause()
@@ -39,7 +43,7 @@ public class PauseMenu : MonoBehaviour {
     Time.timeScale = 0f;
     GameIsPaused = true;
 
-    AudioListener.pause = true;
+    //AudioListener.pause = true;
   }
 
   public void LoadMenu()
@@ -57,5 +61,19 @@ public class PauseMenu : MonoBehaviour {
   {
     Debug.Log("Quiting game...");
     Application.Quit();
+  }
+
+  public void Mute()
+  {
+    if (mute == false)
+    {
+      mute = true;
+      AudioListener.volume = 0f;
+    }
+    else if (mute == true)
+    {
+      mute = false;
+      AudioListener.volume = 1f;
+    }
   }
 }
