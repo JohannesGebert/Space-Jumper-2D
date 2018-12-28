@@ -110,7 +110,7 @@ public class EnemyControllerScript : MonoBehaviour {
   {
     
 
-    if (other.gameObject.name == "Feet")
+    if (other.gameObject.name == "Feet" && other.attachedRigidbody.velocity.y < 0)
     {
       GameObject playerLink = GameObject.FindGameObjectWithTag("Player");
       Rigidbody2D playerRigidBody = playerLink.GetComponent<Rigidbody2D>();

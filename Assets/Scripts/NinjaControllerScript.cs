@@ -101,6 +101,7 @@ public class NinjaControllerScript : MonoBehaviour {
       //Grafik deaktivieren
       other.gameObject.GetComponent<Renderer>().enabled = false;
       other.gameObject.GetComponent<Collider2D>().enabled = false;
+      //Destroy(other.gameObject);
       //Sound der Münze abspielen
       AudioSource Audio = other.gameObject.GetComponent<AudioSource>();
       Audio.Play();
