@@ -8,6 +8,7 @@ public class NinjaControllerScript : MonoBehaviour {
 
   public float MaxSpeed = 10f;
   private bool FacingRight = true;
+  private bool Attack;
 
   //bool Grounded = false;
   //public Transform GroundCheck;
@@ -48,9 +49,13 @@ public class NinjaControllerScript : MonoBehaviour {
 
     float Move = Input.GetAxis("Horizontal");
 
+    if (!this.Animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+    {
+      GetComponent<Rigidbody2D>().velocity = new Vector2(Move * MaxSpeed, GetComponent<Rigidbody2D>().velocity.y);
+    }
+
     Animator.SetFloat("Speed", Mathf.Abs(Move));
 
-    GetComponent<Rigidbody2D>().velocity = new Vector2(Move * MaxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
     if (Move > 0 && !FacingRight)
     {
@@ -69,10 +74,15 @@ public class NinjaControllerScript : MonoBehaviour {
     {
       rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
     }
+
+    HandleAttacks();
+
+    ResetValues();
   }
 
-  //void Update()
-  //{
+  void Update()
+  {
+    HandleInput();
   //  //if (Grounded && Input.GetKeyDown(KeyCode.Space))
   //  //{
   //  //  Animator.SetBool("Ground", false);
@@ -83,7 +93,7 @@ public class NinjaControllerScript : MonoBehaviour {
   //  //{
   //  //  GetComponent<Rigidbody2D>().velocity = Vector2.up * JumpVelocity;
   //  //}
-  //}
+  }
 
 
 
@@ -144,4 +154,26 @@ public class NinjaControllerScript : MonoBehaviour {
       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
   }*/
+
+  private void HandleAttacks()
+  {
+    if (Attack && !this.Animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+    {
+      Animator.SetTrigger("Attack");
+      rb.velocity = Vector2.zero;
+    }
+  }
+
+  private void HandleInput()
+  {
+    if (Input.GetKeyDown(KeyCode.LeftShift))
+    {
+      Attack = true;
+    }
+  }
+
+  private void ResetValues()
+  {
+    Attack = false;
+  }
 }

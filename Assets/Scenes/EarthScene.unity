@@ -4438,21 +4438,23 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4843004011086700, guid: 4d2630151884b01448000dc8fc983855, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843004011086700, guid: 4d2630151884b01448000dc8fc983855, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843004011086700, guid: 4d2630151884b01448000dc8fc983855, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114949820432826560, guid: 4d2630151884b01448000dc8fc983855,
         type: 3}
       propertyPath: ChaseTarget
       value: 
       objectReference: {fileID: 1148663748}
-    - target: {fileID: 60950014749592662, guid: 4d2630151884b01448000dc8fc983855,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61331672894445660, guid: 4d2630151884b01448000dc8fc983855,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d2630151884b01448000dc8fc983855, type: 3}
 --- !u!1 &1261587796
