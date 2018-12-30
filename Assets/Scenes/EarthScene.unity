@@ -2044,7 +2044,7 @@ MonoBehaviour:
   Target: {fileID: 1148663748}
   SmoothTime: 0
   YMaxEnabled: 1
-  YMaxValue: 7.5
+  YMaxValue: 6.7
   YMinEnabled: 1
   YMinValue: 0
   XMaxEnabled: 1
@@ -2077,7 +2077,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 13
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

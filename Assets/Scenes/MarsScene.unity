@@ -3069,7 +3069,7 @@ MonoBehaviour:
   Target: {fileID: 1651387365}
   SmoothTime: 0
   YMaxEnabled: 1
-  YMaxValue: 7.5
+  YMaxValue: 6.7
   YMinEnabled: 1
   YMinValue: 0
   XMaxEnabled: 1
@@ -3110,7 +3110,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 13
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3597,6 +3597,13 @@ MonoBehaviour:
   firePoint: {fileID: 1023292585}
   bulletPrefab: {fileID: 1121852422061066, guid: 2e347d7d87da187498542f6aa99f6613,
     type: 3}
+  startTimeBtwAttack: 0
+  attackPosition: {fileID: 0}
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 0
+  attackRange: 0
+  Damage: 0
 --- !u!1001 &1682060832
 PrefabInstance:
   m_ObjectHideFlags: 0
