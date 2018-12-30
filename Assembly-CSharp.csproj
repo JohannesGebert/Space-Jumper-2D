@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\EnemyControllerScript.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Jump.cs" />
+     <Compile Include="Assets\Scripts\Killer.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\MoveWall.cs" />
      <Compile Include="Assets\Scripts\NinjaControllerScript.cs" />

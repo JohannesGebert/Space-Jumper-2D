@@ -22,7 +22,7 @@ public class Weapon : MonoBehaviour {
       Shoot();
     }
 
-    if (Input.GetKey(KeyCode.LeftShift))
+    if (Input.GetKey(KeyCode.Tab))
     {
       timeBtwAttack = startTimeBtwAttack;
       Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);

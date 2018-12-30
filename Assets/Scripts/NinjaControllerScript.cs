@@ -140,11 +140,19 @@ public class NinjaControllerScript : MonoBehaviour {
       scoreText.text = CoinCounter.ToString();
       Debug.Log("Score: " + CoinCounter);
     }
+  }
 
-    if (other.gameObject.name == "BodyCollider")
+  public IEnumerator Knockback(float KnockDuration, float KnockbackPower, Vector3 KnockbackDirection)
+  {
+    float timer = 0;
+    rb.velocity = new Vector3(rb.velocity.x, 0);
+    while (KnockDuration < timer)
     {
-      GameController.health -= 1;
+      timer += Time.deltaTime;
+
+      rb.AddForce(new Vector3(KnockbackDirection.x * -100, KnockbackDirection.y * KnockbackPower, transform.position.x));
     }
+    yield return 0;
   }
 
   /*void OnCollisionEnter2D(Collision2D other)
@@ -166,7 +174,7 @@ public class NinjaControllerScript : MonoBehaviour {
 
   private void HandleInput()
   {
-    if (Input.GetKeyDown(KeyCode.LeftShift))
+    if (Input.GetKeyDown(KeyCode.Tab))
     {
       Attack = true;
     }
@@ -175,5 +183,11 @@ public class NinjaControllerScript : MonoBehaviour {
   private void ResetValues()
   {
     Attack = false;
+  }
+
+  public void Damage(int damage)
+  {
+    GameController.health -= damage;
+    Animator.SetTrigger("Hurt");
   }
 }
