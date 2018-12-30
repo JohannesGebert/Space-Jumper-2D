@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 114949820432826560}
   - component: {fileID: 50883275012491882}
   - component: {fileID: 60950014749592662}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Zombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4272663318703564}
   - component: {fileID: 61331672894445660}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BodyCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 4823745267642828}
   - component: {fileID: 70373676301184764}
   - component: {fileID: 1580129303}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HeadCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
