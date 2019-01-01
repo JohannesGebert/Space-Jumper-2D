@@ -189,5 +189,6 @@ public class NinjaControllerScript : MonoBehaviour {
   {
     GameController.health -= damage;
     Animator.SetTrigger("Hurt");
+    transform.Translate(Vector2.left * 5);
   }
 }

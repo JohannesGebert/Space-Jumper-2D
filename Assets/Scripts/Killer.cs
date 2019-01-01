@@ -19,7 +19,9 @@ public class Killer : MonoBehaviour
     {
       Player.Damage(1);
 
-      StartCoroutine(Player.Knockback(1f, 350, transform.position));
+      //Player.transform.Translate(Vector2.right * 5);
+
+      //StartCoroutine(Player.Knockback(1f, 350, transform.position));
     }
   }
 }
