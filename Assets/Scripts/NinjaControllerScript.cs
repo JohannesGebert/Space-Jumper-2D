@@ -9,6 +9,7 @@ public class NinjaControllerScript : MonoBehaviour {
   public float MaxSpeed = 10f;
   private bool FacingRight = true;
   private bool Attack;
+  float timer;
 
   //bool Grounded = false;
   //public Transform GroundCheck;
@@ -24,6 +25,9 @@ public class NinjaControllerScript : MonoBehaviour {
 
   private int CoinCounter;
   public Text scoreText;
+  public Text timeText;
+  float WaitOneSecond = 1.0f;
+  float Minute = 0.0f;
 
   Animator Animator;
   Rigidbody2D rb;
@@ -34,6 +38,8 @@ public class NinjaControllerScript : MonoBehaviour {
     Animator = GetComponent<Animator>();
 
     CoinCounter = 0;
+
+    timer = 0;
   }
 
   void Awake()
@@ -83,16 +89,18 @@ public class NinjaControllerScript : MonoBehaviour {
   void Update()
   {
     HandleInput();
-  //  //if (Grounded && Input.GetKeyDown(KeyCode.Space))
-  //  //{
-  //  //  Animator.SetBool("Ground", false);
-  //  //  GetComponent<Rigidbody2D>().AddForce(new Vector2(0, JumpForce));
-  //  //}
+    //  //if (Grounded && Input.GetKeyDown(KeyCode.Space))
+    //  //{
+    //  //  Animator.SetBool("Ground", false);
+    //  //  GetComponent<Rigidbody2D>().AddForce(new Vector2(0, JumpForce));
+    //  //}
 
-  //  //if (Grounded && Input.GetKeyDown(KeyCode.Space))
-  //  //{
-  //  //  GetComponent<Rigidbody2D>().velocity = Vector2.up * JumpVelocity;
-  //  //}
+    //  //if (Grounded && Input.GetKeyDown(KeyCode.Space))
+    //  //{
+    //  //  GetComponent<Rigidbody2D>().velocity = Vector2.up * JumpVelocity;
+    //  //}
+
+    Timer();
   }
 
 
@@ -190,5 +198,46 @@ public class NinjaControllerScript : MonoBehaviour {
     GameController.health -= damage;
     Animator.SetTrigger("Hurt");
     transform.Translate(Vector2.left * 5);
+  }
+
+  public void Timer()
+  {
+    timer += Time.deltaTime;
+    if (timer > WaitOneSecond)
+    {
+      if (WaitOneSecond < 60)
+      {
+        if (WaitOneSecond < 10)
+        {
+          timeText.text = Minute.ToString() + ":" + "0" + WaitOneSecond.ToString();
+        }
+        else if (WaitOneSecond >= 10)
+        {
+          timeText.text = Minute.ToString() + ":" + WaitOneSecond.ToString();
+        }
+      }
+
+      if (WaitOneSecond == 59.0f)
+      {
+        timeText.text = Minute.ToString() + ":" + WaitOneSecond.ToString();
+      }
+
+      if (WaitOneSecond >= 60)
+      {
+        Minute += 1.0f;
+        WaitOneSecond = 0.0f;
+        if (WaitOneSecond < 10)
+        {
+          timeText.text = Minute.ToString() + ":" + "0" + WaitOneSecond.ToString();
+        }
+        else if (WaitOneSecond >= 10)
+        {
+          timeText.text = Minute.ToString() + ":" + WaitOneSecond.ToString();
+        }
+        timer = 0;
+      }
+      WaitOneSecond += 1.0f;
+    }
+    Debug.Log(timer);
   }
 }
