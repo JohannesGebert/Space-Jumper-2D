@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RocketController : MonoBehaviour {
 
@@ -45,7 +45,7 @@ public class RocketController : MonoBehaviour {
       timer += Time.deltaTime;
     }
 
-    if (liftOff && timer >= 2.5f)
+    if (liftOff && timer >= 2.0f)
     {
       LiftOff();
     }
@@ -72,7 +72,12 @@ public class RocketController : MonoBehaviour {
 
   void LiftOff()
   {
-    //GetComponent<Rigidbody2D>().velocity = transform.up * 10f;
     GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (-1 * Time.deltaTime);
+
+    if (timer >= 6.0f)
+    {
+      timer = 0;
+      SceneManager.LoadScene("SpaceScene");
+    }
   }
 }
