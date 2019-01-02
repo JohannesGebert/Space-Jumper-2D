@@ -34,6 +34,7 @@ public class RocketController : MonoBehaviour {
       levelCompleted.LevelCompletedUI.SetActive(true);
       levelCompletedCanvas = true;
       Time.timeScale = 0f;
+      StopTimer.LevelTime();
     }
 	}
 

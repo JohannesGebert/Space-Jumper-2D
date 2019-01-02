@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour {
   public GameObject Life1, Life2, Life3, gameOver;
 
   public Text timeText;
+  public Text finalTimeText;
   float WaitOneSecond = 1.0f;
   float Minute = 0.0f;
   float timer;
@@ -94,5 +95,22 @@ public class GameController : MonoBehaviour {
         }
         WaitOneSecond += 1.0f;
       }
+  }
+
+  public void LevelTime()
+  {
+    WaitOneSecond--;
+    if (Minute < 1)
+    {
+      finalTimeText.text = "Level successfully completed in " + WaitOneSecond.ToString() + " seconds";
+    }
+    else if (Minute == 1)
+    {
+      finalTimeText.text = "Level successfully completed in " + Minute.ToString() + " minute and " + WaitOneSecond.ToString() + " seconds";
+    }
+    else if (Minute > 1)
+    {
+      finalTimeText.text = "Level successfully completed in " + Minute.ToString() + " minutes and " + WaitOneSecond.ToString() + " seconds";
+    }
   }
 }
