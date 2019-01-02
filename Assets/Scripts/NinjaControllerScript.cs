@@ -9,7 +9,7 @@ public class NinjaControllerScript : MonoBehaviour {
   public float MaxSpeed = 10f;
   private bool FacingRight = true;
   private bool Attack;
-  float timer;
+  //float timer;
 
   //bool Grounded = false;
   //public Transform GroundCheck;
@@ -25,9 +25,9 @@ public class NinjaControllerScript : MonoBehaviour {
 
   private int CoinCounter;
   public Text scoreText;
-  public Text timeText;
-  float WaitOneSecond = 1.0f;
-  float Minute = 0.0f;
+  //public Text timeText;
+  //float WaitOneSecond = 1.0f;
+  //float Minute = 0.0f;
 
   Animator Animator;
   Rigidbody2D rb;
@@ -39,7 +39,7 @@ public class NinjaControllerScript : MonoBehaviour {
 
     CoinCounter = 0;
 
-    timer = 0;
+    //timer = 0;
   }
 
   void Awake()
@@ -100,7 +100,7 @@ public class NinjaControllerScript : MonoBehaviour {
     //  //  GetComponent<Rigidbody2D>().velocity = Vector2.up * JumpVelocity;
     //  //}
 
-    Timer();
+    //Timer();
   }
 
 
@@ -150,18 +150,18 @@ public class NinjaControllerScript : MonoBehaviour {
     }
   }
 
-  public IEnumerator Knockback(float KnockDuration, float KnockbackPower, Vector3 KnockbackDirection)
-  {
-    float timer = 0;
-    rb.velocity = new Vector3(rb.velocity.x, 0);
-    while (KnockDuration < timer)
-    {
-      timer += Time.deltaTime;
+  //public IEnumerator Knockback(float KnockDuration, float KnockbackPower, Vector3 KnockbackDirection)
+  //{
+  //  float timer = 0;
+  //  rb.velocity = new Vector3(rb.velocity.x, 0);
+  //  while (KnockDuration < timer)
+  //  {
+  //    timer += Time.deltaTime;
 
-      rb.AddForce(new Vector3(KnockbackDirection.x * -100, KnockbackDirection.y * KnockbackPower, transform.position.x));
-    }
-    yield return 0;
-  }
+  //    rb.AddForce(new Vector3(KnockbackDirection.x * -100, KnockbackDirection.y * KnockbackPower, transform.position.x));
+  //  }
+  //  yield return 0;
+  //}
 
   /*void OnCollisionEnter2D(Collision2D other)
   {
@@ -200,44 +200,44 @@ public class NinjaControllerScript : MonoBehaviour {
     transform.Translate(Vector2.left * 5);
   }
 
-  public void Timer()
-  {
-    timer += Time.deltaTime;
-    if (timer > WaitOneSecond)
-    {
-      if (WaitOneSecond < 60)
-      {
-        if (WaitOneSecond < 10)
-        {
-          timeText.text = Minute.ToString() + ":" + "0" + WaitOneSecond.ToString();
-        }
-        else if (WaitOneSecond >= 10)
-        {
-          timeText.text = Minute.ToString() + ":" + WaitOneSecond.ToString();
-        }
-      }
+  //public void Timer()
+  //{
+  //  timer += Time.deltaTime;
+  //  if (timer > WaitOneSecond)
+  //  {
+  //    if (WaitOneSecond < 60)
+  //    {
+  //      if (WaitOneSecond < 10)
+  //      {
+  //        timeText.text = Minute.ToString() + ":" + "0" + WaitOneSecond.ToString();
+  //      }
+  //      else if (WaitOneSecond >= 10)
+  //      {
+  //        timeText.text = Minute.ToString() + ":" + WaitOneSecond.ToString();
+  //      }
+  //    }
 
-      if (WaitOneSecond == 59.0f)
-      {
-        timeText.text = Minute.ToString() + ":" + WaitOneSecond.ToString();
-      }
+  //    if (WaitOneSecond == 59.0f)
+  //    {
+  //      timeText.text = Minute.ToString() + ":" + WaitOneSecond.ToString();
+  //    }
 
-      if (WaitOneSecond >= 60)
-      {
-        Minute += 1.0f;
-        WaitOneSecond = 0.0f;
-        if (WaitOneSecond < 10)
-        {
-          timeText.text = Minute.ToString() + ":" + "0" + WaitOneSecond.ToString();
-        }
-        else if (WaitOneSecond >= 10)
-        {
-          timeText.text = Minute.ToString() + ":" + WaitOneSecond.ToString();
-        }
-        timer = 0;
-      }
-      WaitOneSecond += 1.0f;
-    }
-    Debug.Log(timer);
-  }
+  //    if (WaitOneSecond >= 60)
+  //    {
+  //      Minute += 1.0f;
+  //      WaitOneSecond = 0.0f;
+  //      if (WaitOneSecond < 10)
+  //      {
+  //        timeText.text = Minute.ToString() + ":" + "0" + WaitOneSecond.ToString();
+  //      }
+  //      else if (WaitOneSecond >= 10)
+  //      {
+  //        timeText.text = Minute.ToString() + ":" + WaitOneSecond.ToString();
+  //      }
+  //      timer = 0;
+  //    }
+  //    WaitOneSecond += 1.0f;
+  //  }
+  //  Debug.Log(timer);
+  //}
 }
