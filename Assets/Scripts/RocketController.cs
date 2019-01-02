@@ -15,6 +15,8 @@ public class RocketController : MonoBehaviour {
 
   float timer;
   bool timerStarted = false;
+  bool secondTimerStarted = false;
+  bool liftOff = false;
 
   // Use this for initialization
   void Start () {
@@ -35,6 +37,17 @@ public class RocketController : MonoBehaviour {
       levelCompletedCanvas = true;
       Time.timeScale = 0f;
       StopTimer.LevelTime();
+      timerStarted = false;
+      timer = 0;
+    }
+    if (secondTimerStarted)
+    {
+      timer += Time.deltaTime;
+    }
+
+    if (liftOff && timer >= 2.5f)
+    {
+      LiftOff();
     }
 	}
 
@@ -52,5 +65,14 @@ public class RocketController : MonoBehaviour {
   public void NextLevel()
   {
     animator.SetBool("Close", true);
+
+    secondTimerStarted = true;
+    liftOff = true;
+  }
+
+  void LiftOff()
+  {
+    //GetComponent<Rigidbody2D>().velocity = transform.up * 10f;
+    GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (-1 * Time.deltaTime);
   }
 }
