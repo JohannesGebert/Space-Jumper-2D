@@ -9,25 +9,12 @@ public class NinjaControllerScript : MonoBehaviour {
   public float MaxSpeed = 10f;
   private bool FacingRight = true;
   private bool Attack;
-  //float timer;
-
-  //bool Grounded = false;
-  //public Transform GroundCheck;
-  //float GroundRadius = 0.2f;
-  //public LayerMask WhatIsGround;
-  //public float JumpForce = 700;
-
-  //[Range(1, 40)]
-  //public float JumpVelocity;
 
   public float fallMultiplier = 2.5f;
   public float lowJumpMultiplier = 2f;
 
   private int CoinCounter;
   public Text scoreText;
-  //public Text timeText;
-  //float WaitOneSecond = 1.0f;
-  //float Minute = 0.0f;
 
   Animator Animator;
   Rigidbody2D rb;
@@ -38,8 +25,6 @@ public class NinjaControllerScript : MonoBehaviour {
     Animator = GetComponent<Animator>();
 
     CoinCounter = 0;
-
-    //timer = 0;
   }
 
   void Awake()
@@ -47,12 +32,8 @@ public class NinjaControllerScript : MonoBehaviour {
     rb = GetComponent<Rigidbody2D>();
   }
 
-	// Update is called once per frame
 	void FixedUpdate ()
   {
-    //Grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundRadius, WhatIsGround);
-    //Animator.SetBool("Ground", Grounded);
-
     float Move = Input.GetAxis("Horizontal");
 
     if (!this.Animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
@@ -89,18 +70,6 @@ public class NinjaControllerScript : MonoBehaviour {
   void Update()
   {
     HandleInput();
-    //  //if (Grounded && Input.GetKeyDown(KeyCode.Space))
-    //  //{
-    //  //  Animator.SetBool("Ground", false);
-    //  //  GetComponent<Rigidbody2D>().AddForce(new Vector2(0, JumpForce));
-    //  //}
-
-    //  //if (Grounded && Input.GetKeyDown(KeyCode.Space))
-    //  //{
-    //  //  GetComponent<Rigidbody2D>().velocity = Vector2.up * JumpVelocity;
-    //  //}
-
-    //Timer();
   }
 
 
@@ -163,14 +132,6 @@ public class NinjaControllerScript : MonoBehaviour {
   //  yield return 0;
   //}
 
-  /*void OnCollisionEnter2D(Collision2D other)
-  {
-    if (other.gameObject.tag == "Enemy")
-    {
-      SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-  }*/
-
   private void HandleAttacks()
   {
     if (Attack && !this.Animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
@@ -199,45 +160,4 @@ public class NinjaControllerScript : MonoBehaviour {
     Animator.SetTrigger("Hurt");
     transform.Translate(Vector2.left * 5);
   }
-
-  //public void Timer()
-  //{
-  //  timer += Time.deltaTime;
-  //  if (timer > WaitOneSecond)
-  //  {
-  //    if (WaitOneSecond < 60)
-  //    {
-  //      if (WaitOneSecond < 10)
-  //      {
-  //        timeText.text = Minute.ToString() + ":" + "0" + WaitOneSecond.ToString();
-  //      }
-  //      else if (WaitOneSecond >= 10)
-  //      {
-  //        timeText.text = Minute.ToString() + ":" + WaitOneSecond.ToString();
-  //      }
-  //    }
-
-  //    if (WaitOneSecond == 59.0f)
-  //    {
-  //      timeText.text = Minute.ToString() + ":" + WaitOneSecond.ToString();
-  //    }
-
-  //    if (WaitOneSecond >= 60)
-  //    {
-  //      Minute += 1.0f;
-  //      WaitOneSecond = 0.0f;
-  //      if (WaitOneSecond < 10)
-  //      {
-  //        timeText.text = Minute.ToString() + ":" + "0" + WaitOneSecond.ToString();
-  //      }
-  //      else if (WaitOneSecond >= 10)
-  //      {
-  //        timeText.text = Minute.ToString() + ":" + WaitOneSecond.ToString();
-  //      }
-  //      timer = 0;
-  //    }
-  //    WaitOneSecond += 1.0f;
-  //  }
-  //  Debug.Log(timer);
-  //}
 }

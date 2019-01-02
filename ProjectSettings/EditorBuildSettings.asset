@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/EarthScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/MarsScene.unity
+    path: Assets/Scenes/MarsScene1.unity
     guid: ad097a569611c2142b85e36fc59180c8
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
