@@ -6,11 +6,22 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour {
 
   public static bool GameIsPaused = false;
+  public GameObject muteIcon;
+  public GameObject unmuteIcon;
 
   public GameObject PauseMenuUI;
   
 
   bool mute = false;
+
+  void Start()
+  {
+    if (!mute)
+    {
+      unmuteIcon.SetActive(false);
+      muteIcon.SetActive(true);
+    }
+  }
 	
 	// Update is called once per frame
 	void Update () {
@@ -68,11 +79,15 @@ public class PauseMenu : MonoBehaviour {
     if (mute == false)
     {
       mute = true;
+      unmuteIcon.SetActive(true);
+      muteIcon.SetActive(false);
       AudioListener.volume = 0f;
     }
     else if (mute == true)
     {
       mute = false;
+      muteIcon.SetActive(true);
+      unmuteIcon.SetActive(false);
       AudioListener.volume = 1f;
     }
   }

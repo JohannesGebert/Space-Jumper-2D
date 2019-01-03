@@ -156,8 +156,11 @@ public class NinjaControllerScript : MonoBehaviour {
 
   public void Damage(int damage)
   {
+    if(GameController.health > 1)
+    {
+      Animator.SetTrigger("Hurt");
+      transform.Translate(Vector2.left * 5);
+    }
     GameController.health -= damage;
-    Animator.SetTrigger("Hurt");
-    transform.Translate(Vector2.left * 5);
   }
 }
