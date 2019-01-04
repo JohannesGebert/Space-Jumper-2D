@@ -5,7 +5,7 @@ using UnityEngine;
 public class FlyMonsterScript : MonoBehaviour
 {
   enum MovementState { moveLeft, moveRight, moveUp, moveDown, die };
-  [StringInList("Left/Right", "Top/Down")] public int Movement;
+  [StringInList("LeftToRight", "RightToLeft", "TopToDown", "DownToUp")] public int Movement;
   public float MoveSpeed = 10.0f;
   public float PatrolRange = 5.0f;
 
@@ -30,9 +30,17 @@ public class FlyMonsterScript : MonoBehaviour
     {
       currentState = MovementState.moveLeft;
     }
-    else
+    else if (Movement == 1)
+    {
+      currentState = MovementState.moveRight;
+    }
+    else if (Movement == 2)
     {
       currentState = MovementState.moveUp;
+    }
+    else if (Movement == 3)
+    {
+      currentState = MovementState.moveDown;
     }
 
     startPosition = transform.position;

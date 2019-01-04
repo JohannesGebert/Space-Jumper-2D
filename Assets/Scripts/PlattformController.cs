@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlattformController : MonoBehaviour {
 
   enum PlattformState { moveLeft, moveRight, moveUp, moveDown };
-  [StringInList("Left/Right", "Top/Down")] public int Movement;
+  [StringInList("LeftToRight", "RightToLeft", "TopToDown" , "DownToUp")] public int Movement;
   public float MoveSpeed = 10.0f;
   public float PatrolRange = 5.0f;
 
@@ -19,13 +19,21 @@ public class PlattformController : MonoBehaviour {
     {
       currentState = PlattformState.moveLeft;
     }
-    else
+    else if (Movement == 1)
+    {
+      currentState = PlattformState.moveRight;
+    }
+    else if (Movement == 2)
     {
       currentState = PlattformState.moveUp;
     }
-    
-    startPosition = transform.position;
-	}
+    else if (Movement == 3)
+    {
+      currentState = PlattformState.moveDown;
+    }
+
+      startPosition = transform.position;
+    }
 	
 	// Update is called once per frame
 	void Update () {
