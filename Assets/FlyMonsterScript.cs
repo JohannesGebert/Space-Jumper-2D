@@ -13,7 +13,7 @@ public class FlyMonsterScript : MonoBehaviour
   Vector3 startPosition;
   Vector3 velocity = Vector3.zero;
 
-  float bounceRange = 10.0f;
+  float bounceRange = 20.0f;
 
   SpriteRenderer spriteRenderer;
   Animator animator;
