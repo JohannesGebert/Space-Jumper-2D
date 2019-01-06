@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 8217019899689850891}
   - component: {fileID: 8217019899689850888}
   - component: {fileID: 8217019899689850884}
+  - component: {fileID: 5053633336376685564}
   m_Layer: 10
   m_Name: FlyMonster
   m_TagString: Enemy
@@ -172,9 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e0a047ab1ca5b41a1613a8a742041a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Movement: 0
-  MoveSpeed: 200
-  PatrolRange: 11.26
+  Movement: 1
+  MoveSpeed: 400
+  PatrolRange: 6.38
 --- !u!50 &8217019899689850888
 Rigidbody2D:
   serializedVersion: 4
@@ -259,3 +260,15 @@ PolygonCollider2D:
       - {x: 0.26, y: 0.01}
       - {x: 0.35, y: -0.03}
       - {x: 0.45999998, y: -0.02}
+--- !u!114 &5053633336376685564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8217019899689850886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f743b37246c6645af40cc8d671dc3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

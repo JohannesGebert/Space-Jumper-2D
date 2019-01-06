@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
+  public string NextPlanet;
+
   public void PlayGame()
   {
     SceneManager.LoadScene(1);

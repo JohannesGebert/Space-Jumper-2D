@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+    Time.timeScale = 1;
     health = 3;
 
     timer = 0;

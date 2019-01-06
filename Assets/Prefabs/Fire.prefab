@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 212226197097043516}
   - component: {fileID: 95998372606154082}
   - component: {fileID: 60063676760419518}
+  - component: {fileID: 3074652890113470856}
   m_Layer: 10
   m_Name: Fire
   m_TagString: Enemy
@@ -159,6 +160,18 @@ PolygonCollider2D:
       - {x: 0.19, y: -1.0699999}
       - {x: 0.34, y: -0.96}
       - {x: 0.41, y: -0.77}
+--- !u!114 &3074652890113470856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520923621187856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f743b37246c6645af40cc8d671dc3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1801312853251298
 GameObject:
   m_ObjectHideFlags: 0
