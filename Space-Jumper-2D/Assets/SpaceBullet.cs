@@ -12,7 +12,7 @@ public class SpaceBullet : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        rb.velocity = transform.up * speed;
+        rb.velocity = transform.right * speed;
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
